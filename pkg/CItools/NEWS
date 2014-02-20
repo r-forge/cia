@@ -1,0 +1,35 @@
+Changes in Version CIP 1-00.03(KB)
+  o changed name from CompFactor to CIP
+  o corrected OECD
+  o externalized vignette because slow in loading
+  o corrected missingness function, use of interpNA function in timeSeries
+  o add outlier correction method
+  o default method should be eight-indicator method
+  o ranking = rank(-index, na.last = TRUE) should be na.last = keep
+  o changed aggregation in function of reweight or not
+  o in completeData, the completed data was not inserted in the data file
+  o commented out the droplevels activity to avoid troubles in paradise
+  o same correctionse made in cleanData
+  o in computeyearlyCIP avoid that NA of indicator not in definition propagates
+  o reweight was not accepted by unido, no homogeneity
+  o make sure compare same samples, therefore adaptation imputation methods
+  o plotCIP crashes with na, correct that by adding in range na.rm = T
+  o add index in yearlist
+  o rewrite of compareCIP
+
+Changes in Version 1-00.02 (DA)
+  o robustbase used instead of robust
+  o modifications of compareCIP
+  o modifications of vignette
+  o fixes in plotCIP
+
+Changes in Version 1-00.01 (DA)
+  o several fixes
+  o added sensitivitylinearCIP
+  o improvement of inputs
+  o missing data with linear and last
+  o plot for CIP and monte carlo analysis
+  o new indicator Lall
+
+Changes in Version 1-00.00 (DA)
+  o first release
