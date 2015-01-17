@@ -1,5 +1,1 @@
-export(computeCIP)
-export(compareCIP)
-export(montecarloCIP)
-export(sensitivitylinearCIP)
-export(plotCIP)
+exportPattern("^[[:alpha:]]+")
