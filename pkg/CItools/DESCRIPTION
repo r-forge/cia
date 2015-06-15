@@ -15,4 +15,5 @@ Depends: compiler, robustbase, timeSeries, ggplot2, reshape2,
         rworldmap, plotrix
 Repository: R-Forge
 Repository/R-Forge/Project: cia
-Packaged: 2014-09-21 21:00:54 UTC; Share
+Packaged: 2015-06-10 00:22:42 UTC; Share
+NeedsCompilation: no
