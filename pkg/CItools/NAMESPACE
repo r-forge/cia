@@ -1,1 +1,7 @@
-exportPattern("^[[:alpha:]]+")
+# Export all names
+exportPattern(".")
+
+## Import all packages listed as Imports or Depends
+import(
+    methods, robustbase, ggplot2, reshape2, rworldmap, plotrix
+)

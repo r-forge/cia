@@ -1,4 +1,5 @@
-\name{compare.compind}
+\name{compare}
+\alias{compare}
 \alias{compare.compind}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -8,8 +9,7 @@ Comparison of Composite Indices
 Function which compares Composite Indices among entities
 }
 \usage{
-## S3 method for class 'compind'
-compare.compind(input, bench = NULL)
+\method{compare}{compind}(input, bench = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

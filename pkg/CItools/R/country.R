@@ -1,3 +1,5 @@
+utils::globalVariables(c("rcodes", "raggr"))      # to appease R CMD CHECK
+
 ####
 ##  Return the index in data.frame 'rcodes' of the
 ##  country specified by 'ct' where 'ct' can be index, UN code,

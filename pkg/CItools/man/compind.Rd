@@ -1,5 +1,8 @@
 \name{compind}
 \alias{compind}
+\alias{compind.formula}
+\alias{compind.default}
+
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Computation of Composite Index
@@ -8,7 +11,9 @@ Computation of Composite Index
 Function which computes indices
 }
 \usage{
-compind(formula, data, time = NULL, for.period = NULL, ctr = ProcessControl())
+compind(x, ...)
+\method{compind}{formula}(formula, data = NULL, subset, na.action, ...)
+\method{compind}{default}(x, cs=NULL, time=NULL, for.period=NULL, ctr=ProcessControl(), ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -60,12 +65,32 @@ Meghnad Desai et.al.(2002),'Measuring the Technology Achievement of Nations and 
   indx_tai= compind(country~., data=tai, ctr=ProcessControl(aggregation='linear', setmax=c(994,272.6,232.4,80.8,2.9547,3.84317, 12,27.4), setmin=c(0,0,0,0,0,1.3424,0.8,0.1)))
   print(indx_tai)
   
-  # Following is an example of calculation of mixed-eight cip index, the index calculation is done using hierarchical aggregation
-  # Load data
+  
+    data(cip)
+    head(cip)
+    
+    index_cip = compind(country~., time="year", for.period = 2005:2010, data=cip,
+        ctr=ProcessControl(weights=c("fixed",1/6,1/6,1/12,1/12,1/12,1/12,1/6,1/6),
+            aggregation="linear"))
+    class(index_cip)
+    names(index_cip)
+
+
+  
+ \dontrun{
+
+## This will not work - issues in the formula interface, do it with the default interface.
+
+  # Following is an example of calculation of mixed-eight cip index, 
+  ##    the index calculation is done using hierarchical aggregation
+  ##
+  ## Load data
+  
   data(cip)
-  # Create new sub-indicator Industrial intensity (INDint), and Manufactured Exports Quality (MXQual)
+  ## Create new sub-indicator Industrial intensity (INDint), and Manufactured Exports Quality (MXQual)
   INDint <- compind(country ~ MHVAsh + MVAsh, time="year", for.period=2010, data=cip, ctr=ProcessControl(aggregation='linear'))
   MXQual <- compind(country ~ MHXsh + MXsh, time="year", for.period=2010, data=cip, ctr=ProcessControl(aggregation='linear'))
+
   # Calculation index using rest of the sub-indicators 
   indicators <- compind(country~MVApc + MXpc + ImWMVA + ImWMT, time= "year", data=cip, for.period=2010, ctr= ProcessControl(weights=c("fixed", 1/6, 1/6, 1/6, 1/6)))
   colnames(indicators$index) = "indicators"
@@ -75,4 +100,5 @@ Meghnad Desai et.al.(2002),'Measuring the Technology Achievement of Nations and 
   index_cip_2010 <- compind(data=cip8, ctr=ProcessControl(weights=c("fixed", 1, 1/6,1/6),normalization="none"))
   # Print index
   print(index_cip_2010)
-  }
+}
+}

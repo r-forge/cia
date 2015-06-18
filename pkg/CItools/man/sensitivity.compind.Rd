@@ -1,4 +1,5 @@
-\name{sensitivity.compind}
+\name{sensitivity}
+\alias{sensitivity}
 \alias{sensitivity.compind}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -8,8 +9,7 @@ Sensitivity analysis of the composite index
 Function which compute the marginal and component sensitivity of the composite index
 }
 \usage{
-## S3 method for class 'compind'
-sensitivity.compind(input, weights, covmethod = c("standard", "robust"))
+\method{sensitivity}{compind}(input, weights, covmethod = c("standard", "robust"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
