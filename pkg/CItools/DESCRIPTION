@@ -12,8 +12,7 @@ LazyLoad: yes
 LazyData: yes
 License: GPL (>=2)
 Depends: methods
-Imports: robustbase, ggplot2, reshape2,plotrix
-Suggests: rworldmap
+Imports: robustbase, ggplot2, reshape2, rworldmap, plotrix
 Repository: R-Forge
 Repository/R-Forge/Project: cia
 Packaged: 2015-06-16 22:43:50 UTC; Share
